@@ -57,3 +57,8 @@ SELECT r.name as "name", COUNT(s.sighting_id) as "total_sightings" FROM "rangers
     ON r.ranger_id = s.ranger_id
     GROUP BY r.name;
 
+-- - Problem 5
+SELECT sp.common_name FROM "species" sp
+    LEFT JOIN "sightings" s
+    ON sp.species_id = s.species_id WHERE s.sighting_id IS NULL;
+
