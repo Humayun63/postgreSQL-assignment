@@ -1,4 +1,3 @@
-CREATE DATABASE conservation_db;
 CREATE TABLE "rangers" (
     ranger_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -83,8 +82,7 @@ SELECT sighting_id,
     END as time_of_day FROM "sightings";
 
 -- - Problem 9
-DELETE FROM "rangers";
-
-SELECT r.ranger_id FROM "rangers" r
+DELETE FROM "rangers"
+    WHERE ranger_id IN (SELECT r.ranger_id FROM "rangers" r
     FULL JOIN "sightings" s ON r.ranger_id = s.ranger_id
-    WHERE s.ranger_id IS NULL;
+    WHERE s.ranger_id IS NULL);
