@@ -81,3 +81,10 @@ SELECT sighting_id,
         WHEN extract(HOUR FROM sighting_time) < 18 THEN 'Afternoon'
         ELSE 'Evening'
     END as time_of_day FROM "sightings";
+
+-- - Problem 9
+DELETE FROM "rangers";
+
+SELECT r.ranger_id FROM "rangers" r
+    FULL JOIN "sightings" s ON r.ranger_id = s.ranger_id
+    WHERE s.ranger_id IS NULL;
