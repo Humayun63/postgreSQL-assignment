@@ -1,6 +1,11 @@
 ## What is PostgreSQL?
 PostgreSQL is an open source relational database management system that use SQL as query language. It has a strong coummunity for support and it supports JSON and advanced SQL features.
 
+## Explain the Primary Key and Foreign Key concepts in PostgreSQL.
+<code>Primary Key</code> is a column of unique values to identify the specific row of that column. For each column of the table the <code>Primary Key</code> is unique and cannot be NULL.
+
+In another side, the <code>Foreign Key</code> is a column that reference to another table and the <code>Foreign Key</code> is also a primary key to that referred table. So in short, the <code>Foreign Key</code> is used to maintain relationship between tables.
+
 ## What is the difference between the VARCHAR and CHAR data types?
 Both <code>VARCHAR</code> and <code>CHAR</code> are data type for storing strings. But the key differences of them are, 
 <table style="border: 1px solid">
